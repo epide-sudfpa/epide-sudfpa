@@ -13,9 +13,9 @@ export type Affiliation = "SUD" | "CGT" | "AUTONOME";
 export const siteConfig = {
   // --- Identité ---
   affiliation: "AUTONOME" as Affiliation, // "SUD" | "CGT" | "AUTONOME"
-  nomCourt: "Notre Syndicat", // ex: "SUD EPIDE", "CGT EPIDE", "USE" (Union Syndicale EPIDE)
-  nomLong: "Le syndicat des agents EPIDE", // ex: "SUD Solidaires EPIDE"
-  accroche: "Un syndicat qui rend des comptes.",
+  nomCourt: "EPIDE SUD FPA", // ex: "SUD EPIDE", "CGT EPIDE", "USE" (Union Syndicale EPIDE)
+  nomLong: "EPIDE SUD FPA", // ex: "SUD Solidaires EPIDE"
+  accroche: "Un syndicat pour le bien commun, au plus près des agents.",
   etablissement: "EPIDE",
   etablissementLong:
     "Établissement pour l'Insertion dans l'Emploi",
@@ -28,7 +28,7 @@ export const siteConfig = {
   },
 
   // --- Contact ---
-  email: "contact@notresyndicat-epide.fr",
+  email: "epide.sudfpa@proton.me",
   formulaireAdhesionUrl: "", // lien Microsoft Forms à insérer
 
   // --- Réseaux sociaux (vide = masqué automatiquement) ---

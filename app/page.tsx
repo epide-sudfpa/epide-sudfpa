@@ -3,8 +3,8 @@ import { ArrowRight, FileCheck2, Users, MapPin } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 
 const chiffresCles = [
-  { valeur: "1 100", label: "agents EPIDE" },
-  { valeur: "20", label: "centres + le siège" },
+  { valeur: "1 200", label: "agents EPIDE" },
+  { valeur: "20", label: "centres + 1 Direction générale" },
   { valeur: "58,5 %", label: "ont voté aux dernières élections" },
   { valeur: "3", label: "services en centre : SMG, SIProf, SECi" },
 ];
@@ -14,19 +14,19 @@ const piliers = [
     icone: FileCheck2,
     titre: "Transparence totale",
     texte:
-      "Rapport moral et financier publié chaque année. Bureau élu, pas hérité. Aucune décision prise sans compte-rendu accessible à tous les adhérents.",
+      "EPIDE SUD FPA a été créé par et pour les agents. En conséquence, la transparence de son activité est le minimum dû à toutes et tous. Le syndicat organisera cette transparence conformément à ses statuts : publication du rapport moral et financier annuel, assemblées générales, congrès, etc.",
   },
   {
     icone: Users,
-    titre: "Au-dessus des services",
+    titre: "Pour le collectif, par le collectif... toujours",
     texte:
-      "SMG, SIProf, SECi, siège : les tensions entre services affaiblissent tout le monde face à la direction. On défend les agents EPIDE, pas un camp contre un autre.",
+      "Le bien commun est notre unique objectif : nous mettons toute notre énergie, notre enthousiasme et nos compétences au service du plus grand nombre, syndiqué.e.s ou non.",
   },
   {
     icone: MapPin,
     titre: "Présence de terrain",
     texte:
-      "Pas un syndicat de permanents planqués derrière une décharge à 100 %. On est dans les centres, on connaît les dossiers, on répond.",
+      "Pour nous, un syndicalisme hors sol n'a aucun sens. Nous veillerons à organiser une présence sur le terrain de tous les instants, que ce soit par l'intermédiaire de nos référents en centre ou de visites régulières.",
   },
 ];
 
@@ -44,10 +44,7 @@ export default function Home() {
               {siteConfig.accroche}
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-              {siteConfig.nomLong}. Né du constat que les agents EPIDE
-              méritent une organisation qui rend des comptes, qui se déplace
-              dans les centres, et qui ne prend pas parti dans les guerres de
-              services.
+              Les élections professionnelles arrivent à grands pas (décembre 2026), c'est pourquoi il est temps de vous présenter notre fonctionnement, nos ambitions et notre programme.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
@@ -113,12 +110,12 @@ export default function Home() {
           <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
             <div>
               <h2 className="font-display text-2xl font-semibold">
-                Des outils concrets, pas que des discours
+                Des outils concrets pour le quotidien
               </h2>
               <p className="mt-2 max-w-xl text-sm text-paper/75">
-                Simulateur de prime, guide des catégories, calcul de mobilité
-                — des outils que vous pouvez utiliser dès aujourd'hui, sans
-                adhérer.
+                Vous trouverez dans cette section des outils pratiques pour toutes et tous :
+				simulateurs, guides pratiques, ... et bien plus (qu'il nous reste à construire !).
+                Des outils que vous pouvez utiliser dès aujourd'hui, sans adhérer.
               </p>
             </div>
             <Link
