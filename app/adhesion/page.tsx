@@ -2,9 +2,10 @@ import { siteConfig } from "@/lib/config";
 import { CheckCircle2 } from "lucide-react";
 
 const raisons = [
-  "Un accompagnement individuel en cas de difficulté (entretien, mobilité, désaccord avec la hiérarchie)",
-  "Un poids collectif plus fort aux élections professionnelles de décembre 2026",
-  "L'accès prioritaire aux permanences et aux outils réservés",
+  "Un accompagnement individuel spécifique en cas de difficulté (fonctionnelle ou non)",
+  "Contribuer à la construction d'un rapport de force au profit du plus grand nombre,",
+  "L'accès prioritaire aux permanences et aux outils internes au syndicat",
+  "La possibilité de monter en compétence par l'intermédiaire de formations",
   "Un rapport moral et financier transparent, consultable chaque année",
 ];
 
@@ -15,12 +16,12 @@ export default function AdhesionPage() {
         Adhérer
       </p>
       <h1 className="mt-4 font-display text-3xl font-semibold text-ink sm:text-4xl">
-        Rejoindre {siteConfig.nomCourt}
+        Rejoindre l'{siteConfig.nomCourt}
       </h1>
       <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-        Adhérer, c&apos;est donner du poids à une organisation qui rend des
-        comptes. Ce n&apos;est pas un engagement idéologique — c&apos;est un
-        choix collectif.
+        Adhérer, c'est d'abord apporter son soutien financier au syndicat, qui existe essentiellement grâce aux cotisations de ses adhérent.e.s. 
+		C'est aussi faire le choix de participer au développement d'une organisation fondée sur les principes de solidarité et de partage.
+		Adhérer, c'est :
       </p>
 
       <ul className="mt-10 space-y-4">

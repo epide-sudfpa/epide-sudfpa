@@ -2,24 +2,24 @@ import { siteConfig } from "@/lib/config";
 
 const engagements = [
   {
-    titre: "Un rapport moral et financier, chaque année, public",
+    titre: "Un fonctionnement démocratique, gravé dans nos statuts",
     texte:
-      "Pas de trésorerie opaque, pas de bureau qui se perpétue sans élection. Ce que nous encaissons et ce que nous dépensons est consultable par tout adhérent, sans en faire la demande.",
+      "L'équipe syndicale est élue par l'ensemble des adhérent.e.s, et peut être révoquée par eux. Pas de trésorerie opaque : les dépenses et les recettes du syndicat seront consultables par l'ensemble des adhérent.e, en permanence.",
   },
   {
-    titre: "Une présence sur le terrain, pas une décharge à 100 %",
+    titre: "Des ambitions fortes",
     texte:
-      "Un syndicat dont les représentants sont injoignables ne défend personne. Nous restons sur nos postes, dans nos services, et nous nous déplaçons en centre.",
+      "L'exercice démocratique est une affaire de rapport de force : c'est la majorité + 1 qui l'emporte. Nous avons donc pour projet de rassembler et de fédérer les agents autour de problématiques et d'objectifs communs, quel que soit le service, en centre ou à la DG. L'organisation du travail telle qu'elle a été définie ne doit pas nous faire oublier que nous partageons un certain nombre de réalités et donc un certain nombre d'attentes et d'espoirs. Nous nous proposons de créer le cadre pour en débattre, les formuler et les revendiquer. Ce faisant, nous espérons créer les espaces de discussion et de débat nécessaires à tout progrès.",
   },
   {
-    titre: "Aucune préférence entre les services",
+    titre: "Un programme à la hauteur de nos ambitions et de vos attentes",
     texte:
-      "SMG, SIProf, SECi, siège : nous ne prenons pas parti dans les tensions inter-services. Ces divisions affaiblissent le rapport de force collectif face à la direction — c'est précisément ce que nous voulons dépasser.",
+      "Un syndicat, ce n'est pas qu'une structure chargée de défendre les intérêts collectifs et individuels des travailleurs, c'est aussi un outil de formation et d'émancipation. Nous ferons le tour des centres pour venir vous rencontrer, nous mettrons à disposition de toutes et tous des outils en ligne pour fluidifier le quotidien, nous animerons des ateliers spécifiques pour mieux comprendre et analyser ses conditions de travail (fiche de paie, droit du travail, etc.).",
   },
   {
-    titre: "Des réponses concrètes avant des slogans",
+    titre: "Un traitement rigoureux de toutes les sollicitations",
     texte:
-      "Un agent qui nous contacte pour une question de prime, de catégorie ou de mobilité doit avoir une réponse utile, pas un discours.",
+      "Par téléphone, par courriel ou en direct, nous nous engageons à fournir une réponse à votre question dans les plus brefs délais. Si nous n'avons pas la réponse, nous la chercherons, mais toutes les questions seront traitées.",
   },
 ];
 
@@ -30,13 +30,19 @@ export default function ValeursPage() {
         Notre ligne
       </p>
       <h1 className="mt-4 font-display text-3xl font-semibold text-ink sm:text-4xl">
-        Ce que nous défendons, et comment nous fonctionnons
+        Fonctionnement, ambitions et programme
       </h1>
       <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-        {siteConfig.nomLong} ne s&apos;est pas créé par goût de la division.
-        Il s&apos;est créé parce que les agents EPIDE méritent une
-        organisation qui rend des comptes, qui se déplace, et qui ne traite
-        pas certains services comme plus légitimes que d&apos;autres.
+        EPIDE SUD FPA n'a pas été créé dans le but de diviser un peu plus les agents de l'établissement
+		mais à partir d'un constat simple : aux dernières élections professionnelles, le syndicat majoritaire
+		n'a été élu que par <b>336 agents sur 1079 votants</b> (67,20% des 500 suffrages exprimés). En d'autres termes, 
+		à peine 1 agent sur 3 (😱) a choisi cette organisation pour nous représenter.
+		
+		Pour intéresser le plus grand nombre, il y a donc des lacunes importantes à combler : les agents agents EPIDE 
+		méritent une organisation qui leur appartiennent, au sein de laquelle ils se sentent libre de 
+		participer et de militer et qui soit capable de fédérer par-delà les métiers et les services...
+		
+		C'est ce que nous nous proposons de faire, et voici comment 👇🏼.
       </p>
 
       <div className="mt-14 space-y-10">
@@ -55,11 +61,11 @@ export default function ValeursPage() {
           Ce que nous ne sommes pas
         </h2>
         <p className="mt-3 leading-relaxed text-ink-soft">
-          Nous ne sommes ni un syndicat de posture, ni un appareil au service
-          de ses seuls permanents. Nous ne demandons à personne de choisir un
-          camp idéologique pour nous rejoindre : nous demandons un constat
-          partagé — les agents EPIDE ont besoin d&apos;une organisation qui
-          fonctionne.
+          👉🏼 Pour enthousiastes et motivé.e.s que nous soyons, nous ne sommes ni tout-puissants,
+		  ni magiciens : nous avons déjà un métier à l'EPIDE et nous exercerons notre
+		  activité syndicale en partie sur notre temps libre.
+		  Par conséquent, <b> rejoignez-nous</b> nous avons besoin d'adhérent.e.s pour apporter leur pierre
+		  à l'édifice et faire de l'EPIDE SUD FPA un syndicat fonctionnel au service de toutes et tous !
         </p>
       </div>
     </div>
