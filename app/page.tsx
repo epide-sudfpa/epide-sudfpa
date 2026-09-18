@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/config";
 const chiffresCles = [
   { valeur: "1 200", label: "agents EPIDE" },
   { valeur: "20", label: "centres + 1 Direction générale" },
-  { valeur: "58,5 %", label: "ont voté aux dernières élections" },
+  { valeur: "67,2 %", label: "ont voté aux dernières élections" },
   { valeur: "3", label: "services en centre : SMG, SIProf, SECi" },
 ];
 
