@@ -13,6 +13,8 @@
   --color-copper-soft: #E8D9C3;  /* fond d'accent doux */
   --color-moss: #4A6B5C;         /* vert sourd — indicateurs positifs, simulateurs */
   --color-moss-soft: #DEE6E1;
+  --color-urgence: #D6412A;      /* accent saturé, réservé — CTA adhésion, échéances électorales */
+  --color-urgence-soft: #E37256;
   --color-line: #DCD8CE;         /* hairlines */
   --color-alert: #9A3B2E;        /* alertes, deadlines — utilisé avec parcimonie */
 
@@ -38,6 +40,8 @@
   --color-copper-soft: var(--color-copper-soft);
   --color-moss: var(--color-moss);
   --color-moss-soft: var(--color-moss-soft);
+  --color-urgence: var(--color-urgence);
+  --color-urgence-soft: var(--color-urgence-soft);
   --color-line: var(--color-line);
   --color-alert: var(--color-alert);
 

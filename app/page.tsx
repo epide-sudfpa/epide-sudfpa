@@ -37,9 +37,9 @@ export default function Home() {
       <section className="border-b border-line bg-paper-raised">
         <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
           <div className="max-w-3xl">
-            <p className="font-mono-num text-xs font-semibold uppercase tracking-widest text-copper">
+            <span className="inline-flex items-center rounded-full bg-urgence/10 px-3 py-1 font-mono-num text-xs font-semibold uppercase tracking-widest text-urgence">
               {siteConfig.etablissement} — Élections professionnelles, décembre 2026
-            </p>
+            </span>
             <h1 className="mt-5 font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
               {siteConfig.accroche}
             </h1>
@@ -49,7 +49,7 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/adhesion"
-                className="inline-flex items-center gap-2 rounded-sm bg-slate px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-slate-soft"
+                className="inline-flex items-center gap-2 rounded-sm bg-urgence px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-urgence-soft"
               >
                 Adhérer
                 <ArrowRight size={16} />

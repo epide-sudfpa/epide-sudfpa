@@ -38,7 +38,7 @@ export function SiteHeader() {
 
           <Link
             href="/adhesion"
-            className="hidden rounded-sm bg-slate px-5 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-slate-soft sm:inline-block"
+            className="hidden rounded-sm bg-urgence px-5 py-2.5 text-sm font-semibold text-paper transition-colors hover:bg-urgence-soft sm:inline-block"
           >
             Adhérer
           </Link>
@@ -57,7 +57,7 @@ export function SiteHeader() {
           ))}
           <Link
             href="/adhesion"
-            className="text-sm font-semibold text-copper"
+            className="text-sm font-semibold text-urgence"
           >
             Adhérer
           </Link>
