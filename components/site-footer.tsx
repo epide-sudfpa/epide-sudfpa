@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
+import { VisitCounter } from "@/components/visit-counter";
 
 export function SiteFooter() {
   return (
@@ -21,6 +22,7 @@ export function SiteFooter() {
             </p>
             <ul className="mt-3 space-y-2 text-sm">
               <li><Link href="/valeurs" className="hover:text-copper">Notre ligne</Link></li>
+              <li><Link href="/qui-sommes-nous" className="hover:text-copper">Qui sommes-nous ?</Link></li>
               <li><Link href="/vos-droits" className="hover:text-copper">Vos droits</Link></li>
               <li><Link href="/outils" className="hover:text-copper">Outils & simulateurs</Link></li>
               <li><Link href="/adhesion" className="hover:text-copper">Adhérer</Link></li>
@@ -46,9 +48,12 @@ export function SiteFooter() {
           <p>
             © {new Date().getFullYear()} {siteConfig.nomCourt}.
           </p>
-          <Link href="/mentions-legales" className="hover:text-copper">
-            Mentions légales
-          </Link>
+          <div className="flex items-center gap-4">
+            <VisitCounter />
+            <Link href="/mentions-legales" className="hover:text-copper">
+              Mentions légales
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
