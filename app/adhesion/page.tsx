@@ -2,9 +2,9 @@ import { siteConfig } from "@/lib/config";
 import { CheckCircle2 } from "lucide-react";
 
 const raisons = [
-  "Un accompagnement individuel spécifique en cas de difficulté (fonctionnelle ou non)",
-  "Contribuer à la construction d'un rapport de force au profit du plus grand nombre,",
-  "L'accès prioritaire aux permanences et aux outils internes au syndicat",
+  "Bénéficier d'un accompagnement spécifique et prioritaire en cas de difficulté (fonctionnelle ou non)",
+  "Contribuer à la construction d'un rapport de force au profit de tous les agents,",
+  "L'accès prioritaire aux permanences et aux outils internes du syndicat",
   "La possibilité de monter en compétence par l'intermédiaire de formations",
   "Un rapport moral et financier transparent, consultable chaque année",
 ];
