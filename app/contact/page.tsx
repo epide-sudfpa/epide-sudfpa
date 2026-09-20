@@ -1,5 +1,5 @@
-import { siteConfig } from "@/lib/config";
-import { Mail, MapPin } from "lucide-react";
+import { ContactForm } from "@/components/contact-form";
+import { MapPin, MessageSquare } from "lucide-react";
 
 export default function ContactPage() {
   return (
@@ -11,25 +11,22 @@ export default function ContactPage() {
         Nous contacter
       </h1>
       <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-        Par email, ou en personne dans votre centre. Pas de standard
-        téléphonique anonyme.
+        Par le formulaire ci-dessous, ou en personne dans votre centre. Pas de
+        standard téléphonique anonyme.
       </p>
 
       <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2">
         <div className="bg-paper-raised p-7">
-          <Mail size={22} className="text-copper" strokeWidth={1.75} />
+          <MessageSquare size={22} className="text-copper" strokeWidth={1.75} />
           <h2 className="mt-4 font-display text-lg font-semibold text-ink">
-            Par email
+            Écrivez-nous
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-ink-soft">
             Réponse sous 48h ouvrées.
           </p>
-          <a
-            href={`mailto:${siteConfig.email}`}
-            className="mt-4 inline-block text-sm font-semibold text-slate underline"
-          >
-            {siteConfig.email}
-          </a>
+          <div className="mt-6">
+            <ContactForm />
+          </div>
         </div>
 
         <div className="bg-paper-raised p-7">
