@@ -1,5 +1,11 @@
-import { ContactForm } from "@/components/contact-form";
-import { MapPin, MessageSquare } from "lucide-react";
+import { MapPin } from "lucide-react";
+
+// Formulaire Google Forms existant, réutilisé en attendant l'achat d'un nom
+// de domaine propre (nécessaire pour un envoi d'email fiable depuis le site).
+// Solution de transition, assumée comme telle — facilement remplaçable par
+// le formulaire natif (voir components/contact-form.tsx, toujours en place)
+// le jour où ce choix est reconsidéré.
+const GOOGLE_FORM_ID = "1FAIpQLSexdR85lHTB2GyF_cLq8ZDopOq4wnh1tuEeycgFoVtK8JiFWA";
 
 export default function ContactPage() {
   return (
@@ -14,26 +20,25 @@ export default function ContactPage() {
         Par le formulaire ci-dessous, ou en personne dans votre centre.
       </p>
 
-      <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2">
-        <div className="bg-paper-raised p-7">
-          <MessageSquare size={22} className="text-copper" strokeWidth={1.75} />
-          <h2 className="mt-4 font-display text-lg font-semibold text-ink">
-            Écrivez-nous
-          </h2>
-          <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-            Réponse sous 48h ouvrées.
-          </p>
-          <div className="mt-6">
-            <ContactForm />
-          </div>
-        </div>
+      <div className="mt-10 overflow-hidden rounded-sm border border-line bg-paper-raised shadow-sm">
+        <iframe
+          src={`https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/viewform?embedded=true`}
+          title="Formulaire de contact SUD FPA EPIDE"
+          className="block w-full"
+          height={920}
+          loading="lazy"
+        >
+          Chargement du formulaire…
+        </iframe>
+      </div>
 
-        <div className="bg-paper-raised p-7">
-          <MapPin size={22} className="text-copper" strokeWidth={1.75} />
-          <h2 className="mt-4 font-display text-lg font-semibold text-ink">
+      <div className="mt-8 flex items-start gap-3 rounded-sm border border-line bg-paper-raised p-6">
+        <MapPin size={20} className="mt-0.5 shrink-0 text-copper" strokeWidth={1.75} />
+        <div>
+          <h2 className="font-display text-base font-semibold text-ink">
             En centre
           </h2>
-          <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+          <p className="mt-1 text-sm leading-relaxed text-ink-soft">
             La liste des contacts par centre sera mise à jour au fur et à
             mesure du développement du syndicat.
           </p>
