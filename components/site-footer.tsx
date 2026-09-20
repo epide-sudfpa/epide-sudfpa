@@ -34,12 +34,7 @@ export function SiteFooter() {
               Contact
             </p>
             <ul className="mt-3 space-y-2 text-sm">
-              <li>
-                <a href={`mailto:${siteConfig.email}`} className="hover:text-copper">
-                  {siteConfig.email}
-                </a>
-              </li>
-              <li><Link href="/contact" className="hover:text-copper">Nous rencontrer en centre</Link></li>
+              <li><Link href="/contact" className="hover:text-copper">Nous contacter</Link></li>
             </ul>
           </div>
         </div>

@@ -72,22 +72,12 @@ function pageEnConstruction(): NextResponse {
     color: #52585C;
     margin: 1.5rem 0 0;
   }
-  a {
-    display: inline-block;
-    margin-top: 2rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #2B3A42;
-    text-decoration: none;
-  }
-  a:hover { color: #B8762E; }
 </style>
 </head>
 <body>
   <p class="kicker">${siteConfig.etablissement}</p>
   <h1>${siteConfig.nomLong}</h1>
   <p>Notre site est en cours de construction. Il sera bientôt en ligne — revenez très vite.</p>
-  <a href="mailto:${siteConfig.email}">${siteConfig.email}</a>
 </body>
 </html>`;
 

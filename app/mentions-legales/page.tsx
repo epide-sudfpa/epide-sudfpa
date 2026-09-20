@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { siteConfig } from "@/lib/config";
 
 export default function MentionsLegalesPage() {
@@ -40,7 +41,13 @@ export default function MentionsLegalesPage() {
           <h2 className="font-display text-base font-semibold text-ink">
             Contact
           </h2>
-          <p className="mt-2">{siteConfig.email}</p>
+          <p className="mt-2">
+            Via notre{" "}
+            <Link href="/contact" className="font-medium text-slate underline">
+              formulaire de contact
+            </Link>
+            .
+          </p>
         </section>
       </div>
     </div>

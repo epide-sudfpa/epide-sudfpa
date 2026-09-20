@@ -7,7 +7,7 @@ const navItems = [
   { href: "/actualites", label: "Actualités" },
   { href: "/vos-droits", label: "Vos droits" },
   { href: "/outils", label: "Outils & simulateurs" },
-  { href: "/contact", label: "Nous rencontrer" },
+  { href: "/contact", label: "Nous contacter" },
 ];
 
 export function SiteHeader() {

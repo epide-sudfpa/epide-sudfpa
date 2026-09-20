@@ -62,13 +62,9 @@ export default function AdhesionPage() {
       </div>
 
       <p className="mt-8 text-sm text-ink-soft">
-        Une question avant d&apos;adhérer ?{" "}
-        <a href={`mailto:${siteConfig.email}`} className="font-medium text-slate underline">
-          Écrivez-nous
-        </a>{" "}
-        ou consultez la page{" "}
+        Une question avant d&apos;adhérer ? Consultez la page{" "}
         <a href="/contact" className="font-medium text-slate underline">
-          Nous rencontrer
+          Nous contacter
         </a>
         .
       </p>

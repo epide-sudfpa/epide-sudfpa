@@ -5,7 +5,7 @@ export default function ContactPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-16">
       <p className="font-mono-num text-xs font-semibold uppercase tracking-widest text-copper">
-        Nous rencontrer
+        Contact
       </p>
       <h1 className="mt-4 font-display text-3xl font-semibold text-ink sm:text-4xl">
         Nous contacter
