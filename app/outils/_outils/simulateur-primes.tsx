@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AlertTriangle, CheckCircle2, Copy, FileDown } from "lucide-react";
+import { AlertTriangle, CheckCircle2, FileDown, Mail } from "lucide-react";
 
 // ============================================================================
 // SIMULATEUR DE PRIME INDIVIDUELLE — port fidèle du fichier HTML original
@@ -60,7 +60,6 @@ export default function SimulateurPrimes() {
     primeTheo: number;
     ecart: number;
   } | null>(null);
-  const [copie, setCopie] = useState(false);
 
   function calculer() {
     const t = parseFloat(taux);
@@ -83,7 +82,6 @@ export default function SimulateurPrimes() {
     const ecart = primeTheo - pr;
 
     setResultat({ mensuel, annuel, primeTheo, ecart });
-    setCopie(false);
   }
 
   function reinitialiser() {
@@ -97,10 +95,10 @@ export default function SimulateurPrimes() {
     setResultat(null);
   }
 
-  const mailGenere = resultat
-    ? `Objet : Demande de vérification du calcul de ma prime individuelle
+  const objetMail = "Demande de vérification du calcul de ma prime individuelle";
 
-Bonjour,
+  const corpsMail = resultat
+    ? `Bonjour,
 
 Après vérification du montant de ma prime individuelle, il apparaît qu'une différence existe entre le montant perçu et le montant qui résulterait d'un calcul effectué sur la base de mon indice majoré actuel.
 
@@ -122,15 +120,12 @@ Cordialement,
 [Prénom NOM]`
     : "";
 
-  async function copierMail() {
-    try {
-      await navigator.clipboard.writeText(mailGenere);
-      setCopie(true);
-      setTimeout(() => setCopie(false), 2500);
-    } catch {
-      // échec silencieux — le texte reste sélectionnable manuellement
-    }
-  }
+  // Texte complet (objet + corps), conservé pour l'aperçu affiché et pour le PDF
+  const mailGenere = resultat ? `Objet : ${objetMail}\n\n${corpsMail}` : "";
+
+  const lienMailto = resultat
+    ? `mailto:?subject=${encodeURIComponent(objetMail)}&body=${encodeURIComponent(corpsMail)}`
+    : "#";
 
   // jsPDF (police Helvetica de base) n'affiche pas correctement l'espace
   // insécable fine (U+202F) utilisée par Intl.NumberFormat pour les milliers
@@ -481,13 +476,18 @@ Cordialement,
                   <pre className="mt-2 max-h-56 overflow-y-auto whitespace-pre-wrap font-sans text-xs leading-relaxed text-ink-soft">
                     {mailGenere}
                   </pre>
-                  <button
-                    onClick={copierMail}
+                  <a
+                    href={lienMailto}
                     className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-slate hover:text-ink"
                   >
-                    <Copy size={14} />
-                    {copie ? "Copié !" : "Copier le mail"}
-                  </button>
+                    <Mail size={14} />
+                    Ouvrir dans ma messagerie
+                  </a>
+                  <p className="mt-1.5 text-[11px] text-ink-soft">
+                    Ouvre votre application mail par défaut, objet et texte
+                    déjà remplis — il ne reste qu&apos;à renseigner le
+                    destinataire et à relire avant l&apos;envoi.
+                  </p>
                 </div>
               </div>
             )}
