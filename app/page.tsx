@@ -3,9 +3,9 @@ import { ArrowRight, FileCheck2, Users, MapPin } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 
 const chiffresCles = [
-  { valeur: "1 200", label: "agents EPIDE" },
+  { valeur: "~1 200", label: "agents EPIDE" },
   { valeur: "20", label: "centres + 1 Direction générale" },
-  { valeur: "67,2 %", label: "ont voté aux dernières élections" },
+  { valeur: "49%", label: "ont voté aux dernières élections" },
   { valeur: "3", label: "services en centre : SMG, SIProf, SECi" },
 ];
 
@@ -14,7 +14,7 @@ const piliers = [
     icone: FileCheck2,
     titre: "Transparence totale",
     texte:
-      "EPIDE SUD FPA a été créé par et pour les agents. En conséquence, la transparence de son activité est le minimum dû à toutes et tous. Le syndicat organisera cette transparence conformément à ses statuts : publication du rapport moral et financier annuel, assemblées générales, congrès, etc.",
+      "EPIDE SUD FPA a été créé <b>par et pour les agents</b>. En conséquence, la transparence de son activité est le minimum dû à toutes et tous. Le syndicat organisera cette transparence <b>conformément à ses statuts</b> : publication du rapport moral et financier annuel, assemblées générales, congrès, etc.",
   },
   {
     icone: Users,
