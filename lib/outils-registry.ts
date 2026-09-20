@@ -27,9 +27,9 @@ export interface OutilMeta {
 export const outilsRegistry: OutilMeta[] = [
   {
     slug: "simulateur-primes",
-    titre: "Simulateur de prime de fin d'année",
+    titre: "Simulateur de prime individuelle",
     description:
-      "Estimez votre prime en fonction de votre catégorie, votre ancienneté et votre situation.",
+      "Vérifiez si le montant de votre prime individuelle correspond à votre indice majoré actuel, et générez un mail de vérification à la DRH en cas d'écart.",
     categorie: "remuneration",
     icone: "Calculator",
     disponible: true,
