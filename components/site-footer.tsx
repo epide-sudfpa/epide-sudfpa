@@ -9,19 +9,19 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-10 sm:grid-cols-3">
           <div>
-            <Image
-              src="/logo/sud-fpa-epide.png"
-              alt="SUD FPA — Solidaires"
-              width={68}
-              height={32}
-              className="h-8 w-auto"
-            />
-            <p className="mt-3 font-display text-lg font-semibold">
+            <p className="font-display text-lg font-semibold">
               {siteConfig.nomCourt}
             </p>
             <p className="mt-2 text-sm text-paper/70">
               {siteConfig.nomLong}
             </p>
+            <Image
+              src="/logo/sud-fpa-epide.png"
+              alt="SUD FPA — Solidaires"
+              width={272}
+              height={128}
+              className="mt-4 h-32 w-auto"
+            />
           </div>
 
           <div>

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { siteConfig } from "@/lib/config";
 
 const navItems = [
   { href: "/valeurs", label: "Notre ligne" },
@@ -25,12 +24,6 @@ export function SiteHeader() {
               className="h-10 w-auto"
               priority
             />
-            <span className="font-display text-xl font-semibold text-ink">
-              {siteConfig.nomCourt}
-            </span>
-            <span className="hidden text-sm text-ink-soft sm:inline">
-              {siteConfig.etablissement}
-            </span>
           </Link>
 
           <nav className="hidden items-center gap-8 lg:flex">
