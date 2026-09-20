@@ -9,6 +9,10 @@ const raisons = [
   "Un rapport moral et financier transparent, consultable chaque année",
 ];
 
+// Formulaire Google Forms existant, réutilisé en attendant l'achat d'un nom
+// de domaine propre (même logique de transition que la page Contact).
+const GOOGLE_FORM_ID = "1FAIpQLSeOsmHPVdKhK4dcZDAmDQ4pKPBGuQQNYHtjNkCkTtqpc0zOUQ";
+
 export default function AdhesionPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-16">
@@ -33,32 +37,24 @@ export default function AdhesionPage() {
         ))}
       </ul>
 
-      <div className="mt-12 rounded-sm border border-line bg-paper-raised p-8">
+      <div className="mt-12">
         <h2 className="font-display text-lg font-semibold text-ink">
           Le bulletin d&apos;adhésion
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-          Le formulaire est hébergé sur Microsoft Forms, via l&apos;espace
-          professionnel EPIDE. Vos informations restent dans l&apos;écosystème
-          de l&apos;établissement.
+          Première adhésion ou renouvellement, directement ci-dessous.
         </p>
-
-        {siteConfig.formulaireAdhesionUrl ? (
-          <a
-            href={siteConfig.formulaireAdhesionUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center justify-center rounded-sm bg-slate px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-slate-soft"
+        <div className="mt-6 overflow-hidden rounded-sm border border-line bg-paper-raised shadow-sm">
+          <iframe
+            src={`https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/viewform?embedded=true`}
+            title="Formulaire d'adhésion SUD FPA EPIDE"
+            className="block w-full"
+            height={1400}
+            loading="lazy"
           >
-            Ouvrir le formulaire d&apos;adhésion
-          </a>
-        ) : (
-          <p className="mt-6 rounded-sm bg-copper-soft px-4 py-3 text-sm text-ink">
-            Le lien du formulaire sera ajouté ici (champ{" "}
-            <code className="font-mono-num">formulaireAdhesionUrl</code> dans{" "}
-            <code className="font-mono-num">lib/config.ts</code>).
-          </p>
-        )}
+            Chargement du formulaire…
+          </iframe>
+        </div>
       </div>
 
       <p className="mt-8 text-sm text-ink-soft">
