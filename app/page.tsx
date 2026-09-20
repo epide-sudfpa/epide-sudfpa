@@ -14,7 +14,7 @@ const piliers = [
     icone: FileCheck2,
     titre: "Transparence totale",
     texte:
-      "EPIDE SUD FPA a été créé <b>par et pour les agents</b>. En conséquence, la transparence de son activité est le minimum dû à toutes et tous. Le syndicat organisera cette transparence <b>conformément à ses statuts</b> : publication du rapport moral et financier annuel, assemblées générales, congrès, etc.",
+      "EPIDE SUD FPA a été créé par et pour les agents. En conséquence, la transparence de son activité est le minimum dû à toutes et tous. Le syndicat organisera cette transparence conformément à ses statuts : publication du rapport moral et financier annuel, assemblées générales, congrès, etc.",
   },
   {
     icone: Users,
