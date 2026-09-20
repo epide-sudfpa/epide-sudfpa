@@ -11,8 +11,7 @@ export default function ContactPage() {
         Nous contacter
       </h1>
       <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-        Par le formulaire ci-dessous, ou en personne dans votre centre. Pas de
-        standard téléphonique anonyme.
+        Par le formulaire ci-dessous, ou en personne dans votre centre.
       </p>
 
       <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2">
@@ -36,7 +35,7 @@ export default function ContactPage() {
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-ink-soft">
             La liste des contacts par centre sera mise à jour au fur et à
-            mesure de la constitution du bureau.
+            mesure du développement du syndicat.
           </p>
         </div>
       </div>
