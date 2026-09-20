@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, FileCheck2, Users, MapPin } from "lucide-react";
 import { siteConfig } from "@/lib/config";
@@ -37,7 +38,15 @@ export default function Home() {
       <section className="border-b border-line bg-paper-raised">
         <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
           <div className="max-w-3xl">
-            <span className="inline-flex items-center rounded-full bg-urgence/10 px-3 py-1 font-mono-num text-xs font-semibold uppercase tracking-widest text-urgence">
+            <Image
+              src="/logo/sud-fpa-epide.png"
+              alt="SUD FPA — Solidaires"
+              width={128}
+              height={60}
+              className="block h-14 w-auto"
+              priority
+            />
+            <span className="mt-6 inline-flex items-center rounded-full bg-urgence/10 px-3 py-1 font-mono-num text-xs font-semibold uppercase tracking-widest text-urgence">
               {siteConfig.etablissement} — Élections professionnelles, décembre 2026
             </span>
             <h1 className="mt-5 font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">

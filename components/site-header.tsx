@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
 
@@ -15,7 +16,15 @@ export function SiteHeader() {
     <header className="border-b border-line bg-paper-raised">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex h-20 items-center justify-between">
-          <Link href="/" className="group flex items-baseline gap-3">
+          <Link href="/" className="group flex items-center gap-3">
+            <Image
+              src="/logo/sud-fpa-epide.png"
+              alt="SUD FPA — Solidaires"
+              width={85}
+              height={40}
+              className="h-10 w-auto"
+              priority
+            />
             <span className="font-display text-xl font-semibold text-ink">
               {siteConfig.nomCourt}
             </span>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
 import { VisitCounter } from "@/components/visit-counter";
@@ -8,7 +9,14 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-10 sm:grid-cols-3">
           <div>
-            <p className="font-display text-lg font-semibold">
+            <Image
+              src="/logo/sud-fpa-epide.png"
+              alt="SUD FPA — Solidaires"
+              width={68}
+              height={32}
+              className="h-8 w-auto"
+            />
+            <p className="mt-3 font-display text-lg font-semibold">
               {siteConfig.nomCourt}
             </p>
             <p className="mt-2 text-sm text-paper/70">
