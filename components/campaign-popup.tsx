@@ -52,7 +52,7 @@ export function CampaignPopup() {
       onClick={fermer}
     >
       <div
-        className="relative max-h-[90vh] w-full max-w-md overflow-y-auto rounded-sm border border-line bg-paper-raised p-8 shadow-lg"
+        className="relative max-h-[90vh] w-full max-w-md overflow-y-auto rounded-2xl border border-line bg-paper-raised p-8 shadow-lg"
         onClick={(e) => e.stopPropagation()}
       >
         <button
