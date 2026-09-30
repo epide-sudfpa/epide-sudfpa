@@ -5,7 +5,9 @@ import { marked } from "marked";
 import { getAllContent, getContentBySlug } from "@/lib/content";
 
 export function generateStaticParams() {
-  return getAllContent("guides").map((g) => ({ slug: g.slug }));
+  return getAllContent("guides")
+    .filter((g) => g.disponible)
+    .map((g) => ({ slug: g.slug }));
 }
 
 export default async function GuidePage({
@@ -16,7 +18,7 @@ export default async function GuidePage({
   const { slug } = await params;
   const guide = getContentBySlug("guides", slug);
 
-  if (!guide) notFound();
+  if (!guide || !guide.disponible) notFound();
 
   const html = await marked.parse(guide.content);
 

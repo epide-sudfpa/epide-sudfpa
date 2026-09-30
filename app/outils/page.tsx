@@ -1,11 +1,9 @@
 import Link from "next/link";
-import { Calculator, BookOpen, Map, ArrowRight, type LucideIcon } from "lucide-react";
+import { Calculator, ArrowRight, type LucideIcon } from "lucide-react";
 import { outilsRegistry, categorieLabels } from "@/lib/outils-registry";
 
 const icones: Record<string, LucideIcon> = {
   Calculator,
-  BookOpen,
-  Map,
 };
 
 export default function OutilsPage() {
@@ -48,8 +46,8 @@ export default function OutilsPage() {
                   Utiliser <ArrowRight size={14} />
                 </span>
               ) : (
-                <span className="mt-5 inline-block text-sm font-medium text-ink-soft">
-                  À venir
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-ink-soft">
+                  🚧 À venir
                 </span>
               )}
             </div>

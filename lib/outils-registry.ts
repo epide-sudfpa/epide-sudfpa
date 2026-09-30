@@ -32,24 +32,16 @@ export const outilsRegistry: OutilMeta[] = [
       "Vérifiez si le montant de votre prime individuelle correspond à votre indice majoré actuel, et générez un mail de vérification à la DRH en cas d'écart.",
     categorie: "remuneration",
     icone: "Calculator",
-    disponible: true,
-  },
-  {
-    slug: "guide-categories",
-    titre: "Comprendre les catégories d'emploi",
-    description:
-      "Grille de lecture des catégories EPIDE et des conditions de passage de l'une à l'autre.",
-    categorie: "carriere",
-    icone: "BookOpen",
+    // Remis "à venir" hors période de versement (~mai) : ressorti au bon moment.
     disponible: false,
   },
   {
-    slug: "calcul-mobilite",
-    titre: "Simulateur d'indemnités de mobilité",
+    slug: "rupture-conventionnelle",
+    titre: "Simulateur d'indemnité de rupture conventionnelle",
     description:
-      "Calculez vos droits en cas de mutation ou de changement de centre.",
-    categorie: "mobilite",
-    icone: "Map",
+      "Estimez le montant de votre indemnité spécifique de rupture conventionnelle selon votre ancienneté et votre rémunération.",
+    categorie: "remuneration",
+    icone: "Calculator",
     disponible: false,
   },
 ];

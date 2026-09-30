@@ -21,6 +21,7 @@ export interface ContentMeta {
   date?: string;
   resume?: string;
   categorie?: string;
+  disponible: boolean; // false = affiché en "à venir", grisé, non cliquable
   content: string;
 }
 
@@ -40,6 +41,7 @@ export function getAllContent(dossier: "actualites" | "droits" | "guides"): Cont
       date: data.date,
       resume: data.resume,
       categorie: data.categorie,
+      disponible: data.disponible !== false,
       content,
     };
   });
@@ -62,6 +64,7 @@ export function getContentBySlug(
     date: data.date,
     resume: data.resume,
     categorie: data.categorie,
+    disponible: data.disponible !== false,
     content,
   };
 }
