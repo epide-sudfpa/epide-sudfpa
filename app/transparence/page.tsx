@@ -82,13 +82,13 @@ export default function TransparencePage() {
             autorité. Consultez-les directement auprès de la fédération.
           </p>
           <a
-            href={siteConfig.federation.url}
+            href="https://www.sudfpa.net/statuts-du-syndicat-sud-fpa-solidaires/"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-slate hover:text-ink"
           >
             <ExternalLink size={16} />
-            Voir le site de {siteConfig.federation.nom}
+            Voir les statuts sur {siteConfig.federation.nom}
           </a>
         </div>
 
