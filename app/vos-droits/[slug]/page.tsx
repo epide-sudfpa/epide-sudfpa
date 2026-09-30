@@ -5,7 +5,9 @@ import { marked } from "marked";
 import { getAllContent, getContentBySlug } from "@/lib/content";
 
 export function generateStaticParams() {
-  return getAllContent("droits").map((d) => ({ slug: d.slug }));
+  return getAllContent("droits")
+    .filter((d) => d.disponible)
+    .map((d) => ({ slug: d.slug }));
 }
 
 export default async function FicheDroitPage({
@@ -16,7 +18,7 @@ export default async function FicheDroitPage({
   const { slug } = await params;
   const fiche = getContentBySlug("droits", slug);
 
-  if (!fiche) notFound();
+  if (!fiche || !fiche.disponible) notFound();
 
   const html = await marked.parse(fiche.content);
 
