@@ -22,9 +22,9 @@ export const siteConfig = {
 
   // --- Fédération (vide si autonome) ---
   federation: {
-    nom: "", // ex: "SUD Solidaires"
-    url: "", // ex: "https://solidaires.org"
-    afficherEnAvant: false, // toujours false : on parle au nom d'EPIDE, pas de la fédération
+    nom: "SUD FPA",
+    url: "https://www.sudfpa.net/",
+    afficherEnAvant: true, // affiliation officielle depuis le pivot fédéral : on l'affiche
   },
 
   // --- Contact ---

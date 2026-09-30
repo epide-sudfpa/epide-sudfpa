@@ -22,6 +22,19 @@ export function SiteFooter() {
               height={128}
               className="mt-4 h-32 w-auto"
             />
+            {siteConfig.federation.afficherEnAvant && siteConfig.federation.url && (
+              <p className="mt-4 text-sm text-paper/70">
+                Affiliée à{" "}
+                <a
+                  href={siteConfig.federation.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-copper"
+                >
+                  {siteConfig.federation.nom}
+                </a>
+              </p>
+            )}
           </div>
 
           <div>
