@@ -6,6 +6,7 @@ const navItems = [
   { href: "/qui-sommes-nous", label: "Qui sommes-nous ?" },
   { href: "/actualites", label: "Actualités" },
   { href: "/vos-droits", label: "Vos droits" },
+  { href: "/guides", label: "Guides" },
   { href: "/outils", label: "Outils & simulateurs" },
   { href: "/contact", label: "Nous contacter" },
 ];

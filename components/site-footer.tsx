@@ -45,6 +45,7 @@ export function SiteFooter() {
               <li><Link href="/valeurs" className="hover:text-copper">Notre ligne</Link></li>
               <li><Link href="/qui-sommes-nous" className="hover:text-copper">Qui sommes-nous ?</Link></li>
               <li><Link href="/vos-droits" className="hover:text-copper">Vos droits</Link></li>
+              <li><Link href="/guides" className="hover:text-copper">Guides</Link></li>
               <li><Link href="/outils" className="hover:text-copper">Outils & simulateurs</Link></li>
               <li><Link href="/transparence" className="hover:text-copper">Transparence</Link></li>
               <li><Link href="/adhesion" className="hover:text-copper">Adhérer</Link></li>
