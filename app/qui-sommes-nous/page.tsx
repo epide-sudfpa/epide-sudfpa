@@ -3,9 +3,9 @@ import { UserRound } from "lucide-react";
 import { getEquipeTriee } from "@/lib/equipe-registry";
 
 export const metadata = {
-  title: "Qui sommes-nous ? — EPIDE SUD FPA",
+  title: "Qui sommes-nous ? — la section SUD FPA EPIDE",
   description:
-    "L'équipe syndicale d'EPIDE SUD FPA : les agents qui portent la section au quotidien.",
+    "L'équipe syndicale de la section SUD FPA EPIDE : les agents qui portent la section au quotidien.",
 };
 
 export default function QuiSommesNousPage() {

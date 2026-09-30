@@ -18,7 +18,7 @@ import { FileText, FileDown, Users } from "lucide-react";
 // ============================================================================
 
 export const metadata = {
-  title: "Transparence — EPIDE SUD FPA",
+  title: "Transparence — la section SUD FPA EPIDE",
   description: "Statuts et bilan financier de la section SUD FPA EPIDE.",
 };
 

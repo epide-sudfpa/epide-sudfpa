@@ -20,7 +20,7 @@ export default function AdhesionPage() {
         Adhérer
       </p>
       <h1 className="mt-4 font-display text-3xl font-semibold text-ink sm:text-4xl">
-        Rejoindre l'{siteConfig.nomCourt}
+        Rejoindre {siteConfig.nomLong}
       </h1>
       <p className="mt-6 text-lg leading-relaxed text-ink-soft">
         Adhérer, c'est d'abord apporter son soutien financier au syndicat, qui existe essentiellement grâce aux cotisations de ses adhérent.e.s. 

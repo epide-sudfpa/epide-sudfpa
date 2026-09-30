@@ -12,9 +12,9 @@ export type Affiliation = "SUD" | "CGT" | "AUTONOME";
 
 export const siteConfig = {
   // --- Identité ---
-  affiliation: "AUTONOME" as Affiliation, // "SUD" | "CGT" | "AUTONOME"
-  nomCourt: "EPIDE SUD FPA", // ex: "SUD EPIDE", "CGT EPIDE", "USE" (Union Syndicale EPIDE)
-  nomLong: "EPIDE SUD FPA", // ex: "SUD Solidaires EPIDE"
+  affiliation: "SUD" as Affiliation, // "SUD" | "CGT" | "AUTONOME"
+  nomCourt: "SUD FPA EPIDE", // ex: "SUD EPIDE", "CGT EPIDE", "USE" (Union Syndicale EPIDE)
+  nomLong: "la section SUD FPA EPIDE", // ex: "SUD Solidaires EPIDE"
   accroche: "Un syndicat pour le bien commun, au plus près des agents.",
   etablissement: "EPIDE",
   etablissementLong:

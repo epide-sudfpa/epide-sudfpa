@@ -33,7 +33,7 @@ export default function ValeursPage() {
         Fonctionnement, ambitions et programme
       </h1>
       <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-        EPIDE SUD FPA n'a pas été créé dans le but de diviser un peu plus les agents de l'établissement
+        La section SUD FPA EPIDE n'a pas été créée dans le but de diviser un peu plus les agents de l'établissement
 		mais à partir d'un constat simple : aux dernières élections professionnelles, le syndicat majoritaire
 		n'a été élu que par <b>336 agents sur 1079 votants</b> (67,20% des 500 suffrages exprimés). En d'autres termes, 
 		à peine 1 agent sur 3 (😱) a choisi cette organisation pour nous représenter.
@@ -65,7 +65,7 @@ export default function ValeursPage() {
 		  ni magiciens : nous avons déjà un métier à l'EPIDE et nous exercerons notre
 		  activité syndicale en partie sur notre temps libre.
 		  Par conséquent, <b> rejoignez-nous</b> nous avons besoin d'adhérent.e.s pour apporter leur pierre
-		  à l'édifice et faire de l'EPIDE SUD FPA un syndicat fonctionnel au service de toutes et tous !
+		  à l'édifice et faire de la section SUD FPA EPIDE un syndicat fonctionnel au service de toutes et tous !
         </p>
       </div>
     </div>
