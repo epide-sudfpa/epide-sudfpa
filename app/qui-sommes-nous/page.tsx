@@ -11,16 +11,16 @@ export const metadata = {
 function Photo({ membre }: { membre: MembreEquipe }) {
   return (
     <div
-      className="flex h-36 w-36 items-center justify-center overflow-hidden rounded-full bg-paper text-ink-soft outline outline-2 outline-offset-2 outline-copper/60"
+      className="flex h-52 w-40 items-center justify-center overflow-hidden rounded-2xl bg-paper text-ink-soft ring-1 ring-copper/50"
     >
       {membre.photo ? (
         <Image
           src={membre.photo}
           alt={`${membre.nom}, ${membre.responsabilite}`}
           width={480}
-          height={480}
-          sizes="144px"
-          className="h-full w-full object-cover"
+          height={640}
+          sizes="160px"
+          className="h-full w-full object-cover object-top"
         />
       ) : (
         <UserRound size={56} strokeWidth={1.5} />
