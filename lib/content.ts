@@ -9,6 +9,8 @@ import matter from "gray-matter";
 //   ajouter un fichier .md dans /content/droits
 // Pour publier un guide pratique (mode d'emploi concret, mis à jour au fil
 //   de l'eau) : ajouter un fichier .md dans /content/guides
+//   (champ `href` dans l'en-tête : le guide est une page autonome de /public,
+//   la carte y renvoie directement et le corps du .md est ignoré)
 // Pas de base de données : on commit, ça déploie.
 // ============================================================================
 
@@ -21,6 +23,7 @@ export interface ContentMeta {
   resume?: string;
   categorie?: string;
   disponible: boolean; // false = affiché en "à venir", grisé, non cliquable
+  href?: string; // guide servi comme page autonome (ex: /guides/xxx.html) : la carte y renvoie directement
   content: string;
 }
 
@@ -41,6 +44,7 @@ export function getAllContent(dossier: "droits" | "guides"): ContentMeta[] {
       resume: data.resume,
       categorie: data.categorie,
       disponible: data.disponible !== false,
+    href: data.href,
       content,
     };
   });
@@ -64,6 +68,7 @@ export function getContentBySlug(
     resume: data.resume,
     categorie: data.categorie,
     disponible: data.disponible !== false,
+    href: data.href,
     content,
   };
 }

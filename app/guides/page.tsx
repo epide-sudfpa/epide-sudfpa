@@ -52,6 +52,15 @@ export default function GuidesPage() {
               </div>
             );
 
+            if (g.disponible && g.href) {
+              // Page autonome (fichier statique) : lien classique, pas de navigation client
+              return (
+                <a key={g.slug} href={g.href} className="block">
+                  {contenu}
+                </a>
+              );
+            }
+
             return g.disponible ? (
               <Link key={g.slug} href={`/guides/${g.slug}`} className="block">
                 {contenu}

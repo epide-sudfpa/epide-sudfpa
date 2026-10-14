@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { marked } from "marked";
@@ -19,6 +19,9 @@ export default async function GuidePage({
   const guide = getContentBySlug("guides", slug);
 
   if (!guide || !guide.disponible) notFound();
+
+  // Guide servi comme page autonome : l'adresse /guides/<slug> y renvoie
+  if (guide.href) redirect(guide.href);
 
   const html = await marked.parse(guide.content);
 
