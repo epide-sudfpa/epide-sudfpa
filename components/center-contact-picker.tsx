@@ -1,7 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { Mail } from "lucide-react";
 import { centres, getContactsCentre } from "@/lib/centres-registry";
+
+const OBJET_MAIL = "[Confidentiel syndical]";
+
+function lienMail(email: string) {
+  return `mailto:${email}?subject=${encodeURIComponent(OBJET_MAIL)}`;
+}
 
 export function CenterContactPicker() {
   const [centreChoisi, setCentreChoisi] = useState("");
@@ -31,11 +38,29 @@ export function CenterContactPicker() {
           {contacts.length > 0 ? (
             <>
               <p className="font-medium text-ink">Contact(s) sur ce centre :</p>
-              <ul className="mt-1 space-y-0.5 text-ink-soft">
-                {contacts.map((nom) => (
-                  <li key={nom}>{nom}</li>
+              <ul className="mt-2 space-y-3">
+                {contacts.map((c) => (
+                  <li key={c.nom} className="text-ink-soft">
+                    <span className="font-medium text-ink">{c.nom}</span>
+                    <span className="block text-xs">{c.role}</span>
+                    {c.email && (
+                      <a
+                        href={lienMail(c.email)}
+                        className="mt-1 inline-flex items-center gap-1.5 text-copper underline underline-offset-2 hover:text-ink"
+                      >
+                        <Mail size={14} strokeWidth={1.75} aria-hidden="true" />
+                        Écrire à {c.nom}
+                      </a>
+                    )}
+                  </li>
                 ))}
               </ul>
+              {contacts.some((c) => c.email) && (
+                <p className="mt-3 text-xs text-ink-soft">
+                  Le message s'ouvre dans votre messagerie avec l'objet
+                  « {OBJET_MAIL} ».
+                </p>
+              )}
             </>
           ) : (
             <p className="text-ink-soft">

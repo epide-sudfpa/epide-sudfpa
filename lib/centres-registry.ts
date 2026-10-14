@@ -14,6 +14,8 @@
 // principe que pour la page Qui sommes-nous).
 // ============================================================================
 
+import { equipeRegistry } from "@/lib/equipe-registry";
+
 export const centres = [
   "Alençon",
   "Alès La Grand Combe",
@@ -40,10 +42,21 @@ export const centres = [
 
 export type Centre = (typeof centres)[number];
 
-// Vide pour l'instant — à compléter au fil de la désignation des contacts
-// de centre. Exemple : "Val-de-Reuil": ["Prénom Nom"],
-export const contactsParCentre: Partial<Record<Centre, string[]>> = {};
+export interface ContactCentre {
+  nom: string;
+  role: string;
+  email?: string;
+}
 
-export function getContactsCentre(centre: string): string[] {
-  return contactsParCentre[centre as Centre] ?? [];
+// Les membres de l'Équipe syndicale sont affichés d'office sur leur centre
+// (source : lib/equipe-registry.ts). Les contacts de centre désignés ensuite
+// s'ajoutent ici, centre par centre. Exemple :
+//   "Val-de-Reuil": [{ nom: "Prénom", role: "Contact en centre", email: "prenom.nom@epide.fr" }],
+const contactsSupplementaires: Partial<Record<Centre, ContactCentre[]>> = {};
+
+export function getContactsCentre(centre: string): ContactCentre[] {
+  const membres = equipeRegistry
+    .filter((m) => m.centre === centre)
+    .map((m) => ({ nom: m.nom, role: m.responsabilite, email: m.email }));
+  return [...membres, ...(contactsSupplementaires[centre as Centre] ?? [])];
 }

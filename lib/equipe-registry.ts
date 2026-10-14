@@ -16,6 +16,8 @@
 // ou commenter son entrée ci-dessous.
 // ============================================================================
 
+import type { Centre } from "@/lib/centres-registry";
+
 export interface MembreEquipe {
   id: string;
   nom: string;
@@ -23,6 +25,8 @@ export interface MembreEquipe {
   posteEpide: string;
   lieu: string; // représentation : "Représentant DG", "Centre de ..."
   responsabilite: string;
+  centre: Centre; // lieu de représentation : alimente le sélecteur de la page Contact
+  email?: string; // adresse EPIDE ; sans elle, la personne est listée sans lien mailto
 }
 
 export const equipeRegistry: MembreEquipe[] = [
@@ -33,6 +37,8 @@ export const equipeRegistry: MembreEquipe[] = [
     posteEpide: "Chargé de mission des programmes pédagogiques",
     lieu: "Représentant à la Direction générale",
     responsabilite: "Secrétaire de section",
+    centre: "Direction générale (Malakoff)",
+    email: "loic.lesvignes@epide.fr",
   },
   {
     id: "herve",
@@ -41,6 +47,8 @@ export const equipeRegistry: MembreEquipe[] = [
     posteEpide: "Coordonnateur pédagogique",
     lieu: "Représentant du centre de Strasbourg",
     responsabilite: "Secrétaire adjoint",
+    centre: "Strasbourg",
+    email: "herve.forgez@epide.fr",
   },
   {
     id: "perrine",
@@ -49,6 +57,7 @@ export const equipeRegistry: MembreEquipe[] = [
     posteEpide: "Conseillère en insertion professionnelle",
     lieu: "Représentante du centre de Langres",
     responsabilite: "Trésorière",
+    centre: "Langres",
   },
   {
     id: "cedric",
@@ -57,5 +66,6 @@ export const equipeRegistry: MembreEquipe[] = [
     posteEpide: "Moniteur",
     lieu: "Centre d'Angers-Avrillé",
     responsabilite: "Membre de l'Équipe syndicale",
+    centre: "Angers-Avrillé",
   },
 ];
