@@ -58,14 +58,16 @@ export const equipeRegistry: MembreEquipe[] = [
     lieu: "Représentante du centre de Langres",
     responsabilite: "Trésorière",
     centre: "Langres",
+    email: "perrine.chauffour@epide.fr",
   },
   {
     id: "cedric",
     nom: "Cédric",
     photo: "/equipe/cedric-2.jpg",
     posteEpide: "Moniteur",
-    lieu: "Centre d'Angers-Avrillé",
+    lieu: "Représentant du centre d'Angers-Avrillé",
     responsabilite: "Membre de l'Équipe syndicale",
     centre: "Angers-Avrillé",
+    email: "cedric.arci@epide.fr",
   },
 ];
