@@ -3,9 +3,8 @@ import path from "path";
 import matter from "gray-matter";
 
 // ============================================================================
-// LECTURE DE CONTENU MARKDOWN — actualités, fiches "Vos droits" et "Guides"
+// LECTURE DE CONTENU MARKDOWN — fiches "Vos droits" et "Guides"
 // ============================================================================
-// Pour publier une actualité : ajouter un fichier .md dans /content/actualites
 // Pour publier une fiche droit (considérations générales, stables) :
 //   ajouter un fichier .md dans /content/droits
 // Pour publier un guide pratique (mode d'emploi concret, mis à jour au fil
@@ -25,7 +24,7 @@ export interface ContentMeta {
   content: string;
 }
 
-export function getAllContent(dossier: "actualites" | "droits" | "guides"): ContentMeta[] {
+export function getAllContent(dossier: "droits" | "guides"): ContentMeta[] {
   const dirPath = path.join(contentDir, dossier);
   if (!fs.existsSync(dirPath)) return [];
 
@@ -50,7 +49,7 @@ export function getAllContent(dossier: "actualites" | "droits" | "guides"): Cont
 }
 
 export function getContentBySlug(
-  dossier: "actualites" | "droits" | "guides",
+  dossier: "droits" | "guides",
   slug: string
 ): ContentMeta | null {
   const filePath = path.join(contentDir, dossier, `${slug}.md`);

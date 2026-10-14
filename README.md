@@ -63,12 +63,11 @@ Un outil avec `disponible: false` apparaît grisé sur la liste ("à venir")
 et renvoie une 404 propre si on essaie d'y accéder directement — utile pour
 préparer des outils à l'avance sans les publier.
 
-## Publier une actualité ou une fiche "Vos droits"
+## Publier une fiche "Vos droits"
 
 Pas de base de données : on ajoute un fichier Markdown, on commit, ça se
 déploie.
 
-- Actualité : `content/actualites/mon-article.md`
 - Fiche droit : `content/droits/ma-fiche.md`
 
 Format :
