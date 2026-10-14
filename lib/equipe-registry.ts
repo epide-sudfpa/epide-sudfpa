@@ -1,9 +1,8 @@
 // ============================================================================
 // REGISTRE DE L'ÉQUIPE SYNDICALE — ajouter/retirer un membre = éditer ce fichier
 // ============================================================================
-// Affiché sur /qui-sommes-nous. L'organigramme a 4 places fixes (secrétaire, adjoint,
-// trésorière, membre) : changer quelqu'un = éditer sa fiche ; ajouter un
-// membre supplémentaire demande d'adapter app/qui-sommes-nous/page.tsx.
+// Affiché sur /qui-sommes-nous. Les fiches s'affichent dans l'ordre de la liste,
+// sans hiérarchie visuelle : ajouter un membre = ajouter une entrée.
 //
 // Photo : carrée (480×480), optionnelle. Si fournie, déposer le fichier dans /public/equipe/
 // et indiquer son chemin (ex: "/equipe/prenom-nom.jpg"). Sans photo, un
@@ -24,7 +23,6 @@ export interface MembreEquipe {
   posteEpide: string;
   lieu: string; // représentation : "Représentant DG", "Centre de ..."
   responsabilite: string;
-  role: "secretaire" | "adjoint" | "tresoriere" | "membre"; // place dans l'organigramme
 }
 
 export const equipeRegistry: MembreEquipe[] = [
@@ -35,7 +33,6 @@ export const equipeRegistry: MembreEquipe[] = [
     posteEpide: "Chargé de mission des programmes pédagogiques",
     lieu: "Représentant à la Direction générale",
     responsabilite: "Secrétaire de section",
-    role: "secretaire",
   },
   {
     id: "herve",
@@ -44,7 +41,6 @@ export const equipeRegistry: MembreEquipe[] = [
     posteEpide: "Coordonnateur pédagogique",
     lieu: "Représentant du centre de Strasbourg",
     responsabilite: "Secrétaire adjoint",
-    role: "adjoint",
   },
   {
     id: "perrine",
@@ -53,7 +49,6 @@ export const equipeRegistry: MembreEquipe[] = [
     posteEpide: "Conseillère en insertion professionnelle",
     lieu: "Représentante du centre de Langres",
     responsabilite: "Trésorière",
-    role: "tresoriere",
   },
   {
     id: "cedric",
@@ -62,10 +57,5 @@ export const equipeRegistry: MembreEquipe[] = [
     posteEpide: "Moniteur",
     lieu: "Centre d'Angers-Avrillé",
     responsabilite: "Membre de l'Équipe syndicale",
-    role: "membre",
   },
 ];
-
-export function getMembre(role: MembreEquipe["role"]): MembreEquipe | undefined {
-  return equipeRegistry.find((m) => m.role === role);
-}
