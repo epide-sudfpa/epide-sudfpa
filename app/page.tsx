@@ -40,10 +40,10 @@ export default function Home() {
           <div className="max-w-3xl">
             <Image
               src="/logo/sud-fpa-epide.png"
-              alt="SUD FPA — Solidaires"
-              width={128}
-              height={60}
-              className="block h-14 w-auto"
+              alt="SUD FPA EPIDE — Solidaires"
+              width={140}
+              height={112}
+              className="block h-28 w-auto"
               priority
             />
             <span className="mt-6 inline-flex items-center rounded-full bg-urgence/10 px-3 py-1 font-mono-num text-xs font-semibold uppercase tracking-widest text-urgence">

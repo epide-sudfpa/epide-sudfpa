@@ -17,8 +17,8 @@ export function SiteFooter() {
             </p>
             <Image
               src="/logo/sud-fpa-epide.png"
-              alt="SUD FPA — Solidaires"
-              width={272}
+              alt="SUD FPA EPIDE — Solidaires"
+              width={160}
               height={128}
               className="mt-4 h-32 w-auto"
             />

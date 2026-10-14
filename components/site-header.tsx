@@ -18,10 +18,10 @@ export function SiteHeader() {
           <Link href="/" className="group flex items-center gap-3">
             <Image
               src="/logo/sud-fpa-epide.png"
-              alt="SUD FPA — Solidaires"
-              width={85}
-              height={40}
-              className="h-10 w-auto"
+              alt="SUD FPA EPIDE — Solidaires"
+              width={80}
+              height={64}
+              className="h-16 w-auto"
               priority
             />
           </Link>
