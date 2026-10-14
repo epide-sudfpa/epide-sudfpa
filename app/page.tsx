@@ -8,6 +8,7 @@ const chiffresCles = [
   { valeur: "20", label: "centres + 1 Direction générale" },
   { valeur: "49%", label: "ont voté aux dernières élections" },
   { valeur: "3", label: "services en centre : SMG, SIProf, SECi" },
+  { valeur: "8", label: "directions au siège" },
 ];
 
 const piliers = [
@@ -75,10 +76,13 @@ export default function Home() {
 
         {/* Bandeau chiffres clés — registre "tableau de bord", pas "stat marketing" */}
         <div className="border-t border-line">
-          <div className="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-line sm:grid-cols-4">
+          <div className="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-line sm:grid-cols-5">
             {chiffresCles.map((c) => (
-              <div key={c.label} className="px-6 py-6 text-center sm:text-left">
-                <p className="font-mono-num text-2xl font-semibold text-slate sm:text-3xl">
+              <div
+                key={c.label}
+                className="px-6 py-6 text-center last:col-span-2 sm:px-4 sm:text-left sm:last:col-span-1 lg:px-6"
+              >
+                <p className="whitespace-nowrap font-mono-num text-2xl font-semibold text-slate lg:text-3xl">
                   {c.valeur}
                 </p>
                 <p className="mt-1 text-xs text-ink-soft sm:text-sm">
