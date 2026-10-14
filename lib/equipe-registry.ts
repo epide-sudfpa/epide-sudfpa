@@ -1,10 +1,11 @@
 // ============================================================================
 // REGISTRE DE L'ÉQUIPE SYNDICALE — ajouter/retirer un membre = éditer ce fichier
 // ============================================================================
-// Affiché sur /qui-sommes-nous. Aucune modification de composant nécessaire
-// pour ajouter, retirer ou modifier une fiche.
+// Affiché sur /qui-sommes-nous. L'organigramme a 4 places fixes (secrétaire, adjoint,
+// trésorière, membre) : changer quelqu'un = éditer sa fiche ; ajouter un
+// membre supplémentaire demande d'adapter app/qui-sommes-nous/page.tsx.
 //
-// Photo : optionnelle. Si fournie, déposer le fichier dans /public/equipe/
+// Photo : carrée (480×480), optionnelle. Si fournie, déposer le fichier dans /public/equipe/
 // et indiquer son chemin (ex: "/equipe/prenom-nom.jpg"). Sans photo, un
 // avatar générique est affiché à la place — pas besoin d'attendre la photo
 // pour publier une fiche.
@@ -21,21 +22,50 @@ export interface MembreEquipe {
   nom: string;
   photo?: string; // chemin dans /public/equipe/, laisser vide si pas encore fournie
   posteEpide: string;
+  lieu: string; // représentation : "Représentant DG", "Centre de ..."
   responsabilite: string;
-  ordre: number; // ordre d'affichage, 1 = premier
+  role: "secretaire" | "adjoint" | "tresoriere" | "membre"; // place dans l'organigramme
 }
 
 export const equipeRegistry: MembreEquipe[] = [
   {
-    id: "exemple",
-    nom: "Prénom Nom",
-    posteEpide: "Poste EPIDE — Centre",
+    id: "loic",
+    nom: "Loïc",
+    photo: "/equipe/loic.jpg",
+    posteEpide: "Chargé de mission des programmes pédagogiques",
+    lieu: "Représentant à la Direction générale",
     responsabilite: "Secrétaire de section",
-    ordre: 1,
+    role: "secretaire",
   },
-  // Copier-coller le bloc ci-dessus pour chaque nouveau membre.
+  {
+    id: "herve",
+    nom: "Hervé",
+    photo: "/equipe/herve.jpg",
+    posteEpide: "Coordonnateur pédagogique",
+    lieu: "Représentant du centre de Strasbourg",
+    responsabilite: "Secrétaire adjoint",
+    role: "adjoint",
+  },
+  {
+    id: "perrine",
+    nom: "Perrine",
+    photo: "/equipe/perrine.jpg",
+    posteEpide: "Conseillère en insertion professionnelle",
+    lieu: "Représentante du centre de Langres",
+    responsabilite: "Trésorière",
+    role: "tresoriere",
+  },
+  {
+    id: "cedric",
+    nom: "Cédric",
+    photo: "/equipe/cedric.jpg",
+    posteEpide: "Moniteur",
+    lieu: "Centre d'Angers-Avrillé",
+    responsabilite: "Membre de l'Équipe syndicale",
+    role: "membre",
+  },
 ];
 
-export function getEquipeTriee(): MembreEquipe[] {
-  return [...equipeRegistry].sort((a, b) => a.ordre - b.ordre);
+export function getMembre(role: MembreEquipe["role"]): MembreEquipe | undefined {
+  return equipeRegistry.find((m) => m.role === role);
 }
