@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { getOutilBySlug, outilsRegistry } from "@/lib/outils-registry";
@@ -28,6 +28,11 @@ export default async function OutilPage({
 
   if (!outil || !outil.disponible) {
     notFound();
+  }
+
+  // Outil servi comme page autonome : l'ancienne adresse /outils/<slug> y renvoie
+  if (outil.href) {
+    redirect(outil.href);
   }
 
   const Composant = composants[slug];

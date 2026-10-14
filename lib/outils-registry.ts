@@ -22,9 +22,20 @@ export interface OutilMeta {
   categorie: CategorieOutil;
   icone: string; // nom d'icône lucide-react
   disponible: boolean; // false = affiché en "à venir", grisé
+  href?: string; // outil servi comme page autonome (ex: /simulateurs/xxx.html) : la carte y renvoie directement
 }
 
 export const outilsRegistry: OutilMeta[] = [
+  {
+    slug: "simulateur-reforme-salariale",
+    titre: "Simulateur réforme salariale 2026",
+    description:
+      "Estimez ce que la réforme de la rémunération change pour votre salaire : reclassement, garantie de maintien, plafond et écart cumulé sur 10 ans.",
+    categorie: "remuneration",
+    icone: "Calculator",
+    disponible: true,
+    href: "/simulateurs/reforme-2026.html",
+  },
   {
     slug: "simulateur-primes",
     titre: "Simulateur de prime individuelle",

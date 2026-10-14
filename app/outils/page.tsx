@@ -20,7 +20,7 @@ export default function OutilsPage() {
         ouverts à tous les agents EPIDE.
       </p>
 
-      <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2">
+      <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 sm:[&>*:last-child:nth-child(odd)]:col-span-2">
         {outilsRegistry.map((outil) => {
           const Icon = icones[outil.icone] ?? Calculator;
           const contenu = (
@@ -52,6 +52,15 @@ export default function OutilsPage() {
               )}
             </div>
           );
+
+          if (outil.disponible && outil.href) {
+            // Page autonome (fichier statique) : lien classique, pas de navigation client
+            return (
+              <a key={outil.slug} href={outil.href}>
+                {contenu}
+              </a>
+            );
+          }
 
           return outil.disponible ? (
             <Link key={outil.slug} href={`/outils/${outil.slug}`}>
