@@ -6,8 +6,10 @@ import { centres, getContactsCentre } from "@/lib/centres-registry";
 
 const OBJET_MAIL = "[Confidentiel syndical]";
 
-function lienMail(email: string) {
-  return `mailto:${email}?subject=${encodeURIComponent(OBJET_MAIL)}`;
+// L'adresse n'existe jamais en clair dans la page ni dans le code : elle est
+// assemblée au clic, ce qui échappe aux robots qui collectent les "x@y.z".
+function ecrire(mail: { local: string; domaine: string }) {
+  window.location.href = `mailto:${mail.local}@${mail.domaine}?subject=${encodeURIComponent(OBJET_MAIL)}`;
 }
 
 export function CenterContactPicker() {
@@ -43,19 +45,20 @@ export function CenterContactPicker() {
                   <li key={c.nom} className="text-ink-soft">
                     <span className="font-medium text-ink">{c.nom}</span>
                     <span className="block text-xs">{c.role}</span>
-                    {c.email && (
-                      <a
-                        href={lienMail(c.email)}
+                    {c.mail && (
+                      <button
+                        type="button"
+                        onClick={() => ecrire(c.mail!)}
                         className="mt-1 inline-flex items-center gap-1.5 text-copper underline underline-offset-2 hover:text-ink"
                       >
                         <Mail size={14} strokeWidth={1.75} aria-hidden="true" />
                         Écrire à {c.nom}
-                      </a>
+                      </button>
                     )}
                   </li>
                 ))}
               </ul>
-              {contacts.some((c) => c.email) && (
+              {contacts.some((c) => c.mail) && (
                 <p className="mt-3 text-xs text-ink-soft">
                   Le message s'ouvre dans votre messagerie avec l'objet
                   « {OBJET_MAIL} ».

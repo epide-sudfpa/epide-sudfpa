@@ -28,7 +28,6 @@ export const siteConfig = {
   },
 
   // --- Contact ---
-  email: "epide.sudfpa@proton.me",
   formulaireAdhesionUrl: "", // lien Microsoft Forms à insérer
 
   // --- Réseaux sociaux (vide = masqué automatiquement) ---

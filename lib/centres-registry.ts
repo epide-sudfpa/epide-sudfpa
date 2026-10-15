@@ -45,18 +45,18 @@ export type Centre = (typeof centres)[number];
 export interface ContactCentre {
   nom: string;
   role: string;
-  email?: string;
+  mail?: { local: string; domaine: string }; // adresse scindée, voir lib/equipe-registry.ts
 }
 
 // Les membres de l'Équipe syndicale sont affichés d'office sur leur centre
 // (source : lib/equipe-registry.ts). Les contacts de centre désignés ensuite
 // s'ajoutent ici, centre par centre. Exemple :
-//   "Val-de-Reuil": [{ nom: "Prénom", role: "Contact en centre", email: "prenom.nom@epide.fr" }],
+//   "Val-de-Reuil": [{ nom: "Prénom", role: "Contact en centre", mail: { local: "prenom.nom", domaine: "epide.fr" } }],
 const contactsSupplementaires: Partial<Record<Centre, ContactCentre[]>> = {};
 
 export function getContactsCentre(centre: string): ContactCentre[] {
   const membres = equipeRegistry
     .filter((m) => m.centre === centre)
-    .map((m) => ({ nom: m.nom, role: m.responsabilite, email: m.email }));
+    .map((m) => ({ nom: m.nom, role: m.responsabilite, mail: m.mail }));
   return [...membres, ...(contactsSupplementaires[centre as Centre] ?? [])];
 }

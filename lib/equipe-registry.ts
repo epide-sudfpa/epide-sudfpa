@@ -26,7 +26,9 @@ export interface MembreEquipe {
   lieu: string; // représentation : "Représentant DG", "Centre de ..."
   responsabilite: string;
   centre: Centre; // lieu de représentation : alimente le sélecteur de la page Contact
-  email?: string; // adresse EPIDE ; sans elle, la personne est listée sans lien mailto
+  // Adresse EPIDE, volontairement scindée : jamais écrite "prenom.nom@epide.fr" en clair
+  // dans le code ou le site (collecte par robots). Sans elle, la personne est listée sans bouton.
+  mail?: { local: string; domaine: string };
 }
 
 export const equipeRegistry: MembreEquipe[] = [
@@ -38,7 +40,7 @@ export const equipeRegistry: MembreEquipe[] = [
     lieu: "Représentant à la Direction générale",
     responsabilite: "Secrétaire de section",
     centre: "Direction générale (Malakoff)",
-    email: "loic.lesvignes@epide.fr",
+    mail: { local: "loic.lesvignes", domaine: "epide.fr" },
   },
   {
     id: "herve",
@@ -48,7 +50,7 @@ export const equipeRegistry: MembreEquipe[] = [
     lieu: "Représentant du centre de Strasbourg",
     responsabilite: "Secrétaire adjoint",
     centre: "Strasbourg",
-    email: "herve.forgez@epide.fr",
+    mail: { local: "herve.forgez", domaine: "epide.fr" },
   },
   {
     id: "perrine",
@@ -58,7 +60,7 @@ export const equipeRegistry: MembreEquipe[] = [
     lieu: "Représentante du centre de Langres",
     responsabilite: "Trésorière",
     centre: "Langres",
-    email: "perrine.chauffour@epide.fr",
+    mail: { local: "perrine.chauffour", domaine: "epide.fr" },
   },
   {
     id: "cedric",
@@ -68,6 +70,6 @@ export const equipeRegistry: MembreEquipe[] = [
     lieu: "Représentant du centre d'Angers-Avrillé",
     responsabilite: "Membre de l'Équipe syndicale",
     centre: "Angers-Avrillé",
-    email: "cedric.arci@epide.fr",
+    mail: { local: "cedric.arci", domaine: "epide.fr" },
   },
 ];
