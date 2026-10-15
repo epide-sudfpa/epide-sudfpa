@@ -1,11 +1,9 @@
 import { MapPin } from "lucide-react";
 import { CenterContactPicker } from "@/components/center-contact-picker";
 
-// Formulaire Google Forms existant, réutilisé en attendant l'achat d'un nom
-// de domaine propre (nécessaire pour un envoi d'email fiable depuis le site).
-// Solution de transition, assumée comme telle — facilement remplaçable par
-// le formulaire natif (voir components/contact-form.tsx, toujours en place)
-// le jour où ce choix est reconsidéré.
+// Formulaire Google Forms : les réponses arrivent côté Google (notifications
+// par e-mail à activer dans l'onglet Réponses). L'ancien formulaire natif
+// (Redis + page admin) a été supprimé ; il reste dans l'historique git.
 const GOOGLE_FORM_ID = "1FAIpQLSexdR85lHTB2GyF_cLq8ZDopOq4wnh1tuEeycgFoVtK8JiFWA";
 
 export default function ContactPage() {
