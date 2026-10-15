@@ -27,7 +27,7 @@ export function CenterContactPicker() {
         onChange={(e) => setCentreChoisi(e.target.value)}
         className="mt-1.5 w-full rounded-sm border border-line bg-paper px-3 py-2 text-sm text-ink outline-none focus:border-copper"
       >
-        <option value="">Choisir un centre…</option>
+        <option value="">Choisir votre entité…</option>
         {centres.map((c) => (
           <option key={c} value={c}>
             {c}
@@ -39,7 +39,7 @@ export function CenterContactPicker() {
         <div className="mt-4 rounded-sm bg-paper p-4 text-sm">
           {contacts.length > 0 ? (
             <>
-              <p className="font-medium text-ink">Contact(s) sur ce centre :</p>
+              <p className="font-medium text-ink">Contact(s) pour cette entité :</p>
               <ul className="mt-2 space-y-3">
                 {contacts.map((c) => (
                   <li key={c.nom} className="text-ink-soft">
@@ -67,7 +67,7 @@ export function CenterContactPicker() {
             </>
           ) : (
             <p className="text-ink-soft">
-              Pas encore de contact désigné sur ce centre — écrivez-nous via
+              Pas encore de contact désigné pour cette entité — écrivez-nous via
               le formulaire, nous vous orienterons.
             </p>
           )}

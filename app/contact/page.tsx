@@ -40,8 +40,8 @@ export default function ContactPage() {
             En centre / au siège
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-            Sélectionnez votre centre pour voir vos contacts locaux, au fur
-            et à mesure de leur désignation.
+            Sélectionnez votre centre ou le siège pour voir vos contacts
+            locaux, au fur et à mesure de leur désignation.
           </p>
           <div className="mt-5">
             <CenterContactPicker />
