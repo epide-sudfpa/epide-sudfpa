@@ -24,6 +24,7 @@ export interface ContentMeta {
   categorie?: string;
   disponible: boolean; // false = affiché en "à venir", grisé, non cliquable
   href?: string; // guide servi comme page autonome (ex: /guides/xxx.html) : la carte y renvoie directement
+  verrou?: boolean; // carte barrée « Prochainement… » jusqu'à l'ouverture (voir lib/ouverture.ts)
   content: string;
 }
 
@@ -44,7 +45,8 @@ export function getAllContent(dossier: "droits" | "guides"): ContentMeta[] {
       resume: data.resume,
       categorie: data.categorie,
       disponible: data.disponible !== false,
-    href: data.href,
+      href: data.href,
+      verrou: data.verrou === true,
       content,
     };
   });
@@ -69,6 +71,7 @@ export function getContentBySlug(
     categorie: data.categorie,
     disponible: data.disponible !== false,
     href: data.href,
+    verrou: data.verrou === true,
     content,
   };
 }

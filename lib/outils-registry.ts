@@ -23,6 +23,7 @@ export interface OutilMeta {
   icone: string; // nom d'icône lucide-react
   disponible: boolean; // false = affiché en "à venir", grisé
   href?: string; // outil servi comme page autonome (ex: /simulateurs/xxx.html) : la carte y renvoie directement
+  verrou?: boolean; // carte barrée « Prochainement… » jusqu'à l'ouverture (voir lib/ouverture.ts)
 }
 
 export const outilsRegistry: OutilMeta[] = [
@@ -35,6 +36,7 @@ export const outilsRegistry: OutilMeta[] = [
     icone: "Calculator",
     disponible: true,
     href: "/simulateurs/reforme-2026.html",
+    verrou: true,
   },
   {
     slug: "simulateur-primes",

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getAllContent } from "@/lib/content";
+import { CarteProchainement } from "@/components/carte-prochainement";
 
 export const metadata = {
   title: "Guides — la section SUD FPA EPIDE",
@@ -51,6 +52,14 @@ export default function GuidesPage() {
                 )}
               </div>
             );
+
+            if (g.disponible && g.href && g.verrou) {
+              return (
+                <CarteProchainement key={g.slug} href={g.href} className="block">
+                  {contenu}
+                </CarteProchainement>
+              );
+            }
 
             if (g.disponible && g.href) {
               // Page autonome (fichier statique) : lien classique, pas de navigation client

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Calculator, ArrowRight, type LucideIcon } from "lucide-react";
 import { outilsRegistry, categorieLabels } from "@/lib/outils-registry";
+import { CarteProchainement } from "@/components/carte-prochainement";
 
 const icones: Record<string, LucideIcon> = {
   Calculator,
@@ -52,6 +53,14 @@ export default function OutilsPage() {
               )}
             </div>
           );
+
+          if (outil.disponible && outil.href && outil.verrou) {
+            return (
+              <CarteProchainement key={outil.slug} href={outil.href} className="block h-full bg-paper-raised">
+                {contenu}
+              </CarteProchainement>
+            );
+          }
 
           if (outil.disponible && outil.href) {
             // Page autonome (fichier statique) : lien classique, pas de navigation client

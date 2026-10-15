@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { siteConfig } from "@/lib/config";
+import { repliSiVerrouille } from "@/lib/ouverture";
 
 // ============================================================================
 // GARDE-BARRIÈRE "SITE EN CONSTRUCTION"
@@ -89,13 +90,24 @@ function pageEnConstruction(): NextResponse {
 
 export function proxy(request: NextRequest) {
   const siteLive = process.env.SITE_LIVE === "true";
-  if (siteLive) return NextResponse.next();
 
   const { searchParams } = request.nextUrl;
   const secret = process.env.PREVIEW_SECRET;
   const providedSecret = searchParams.get("preview");
   const hasValidCookie =
     !!secret && request.cookies.get(PREVIEW_COOKIE)?.value === secret;
+
+  // Ouverture différée (guide + simulateur réforme 2026) : avant la date, les
+  // adresses directes renvoient vers la page de liste, sauf pour le propriétaire
+  // (cookie ou lien ?preview=). Se lève seul à l'heure dite : voir lib/ouverture.ts
+  const repli = repliSiVerrouille(request.nextUrl.pathname);
+  if (repli && !hasValidCookie && !(secret && providedSecret === secret)) {
+    const reponse = NextResponse.redirect(new URL(repli, request.url));
+    reponse.headers.set("cache-control", "no-store");
+    return reponse;
+  }
+
+  if (siteLive) return NextResponse.next();
 
   // Lien de prévisualisation : ?preview=SECRET → pose le cookie, laisse passer
   if (secret && providedSecret === secret) {
