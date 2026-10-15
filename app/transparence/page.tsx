@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FileText, Users, ExternalLink } from "lucide-react";
+import { FileText, Users, ExternalLink, Download } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 
 // ============================================================================
@@ -8,14 +8,13 @@ import { siteConfig } from "@/lib/config";
 // Quatre volets, chacun avec sa logique de publicité propre :
 //
 // - RI de la section : document propre à la section, publié ici dès son
-//   adoption (art. 17 du RI : transmission aux adhérents + publication sur
-//   le site de la section).
+//   adoption (art. 19 du RI pour le bilan ; le RI lui-même est publié ici).
 // - Bilan financier annuel : idem, obligation légale de publicité des
 //   comptes (loi du 20 août 2008, art. L. 2135-1 à L. 2135-6 du Code du
 //   travail).
-// - CR d'AG : volontairement NON publiés ici, réservés exclusivement aux
-//   adhérents — rien n'impose leur publication publique, contrairement aux
-//   deux documents ci-dessus.
+// - CR d'AG : volontairement NON publiés ici, réservés aux adhérents, sur
+//   demande (choix assumé par la section ; NB l'art. 8 du RI prévoit une
+//   publication sur le site : à mettre en cohérence lors d'une prochaine AG).
 // - Statuts : ce sont ceux de la fédération SUD FPA, votés par elle — la
 //   section n'a pas la main dessus et ne les héberge donc pas en copie
 //   locale, seulement un lien vers la fédération.
@@ -48,12 +47,18 @@ export default function TransparencePage() {
             Règlement intérieur de la section
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-            Propre à la section SUD FPA EPIDE, en cours de finalisation. Il
-            sera publié ici dès son adoption par l&apos;Assemblée générale.
+            Propre à la section SUD FPA EPIDE, adopté par l&apos;Assemblée
+            générale constitutive du 8 octobre 2026 (version 1).
           </p>
-          <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-ink-soft">
-            🚧 À venir
-          </span>
+          <a
+            href="/documents/reglement-interieur-sud-fpa-epide-v1.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-slate hover:text-ink"
+          >
+            <Download size={16} />
+            Télécharger le règlement intérieur (PDF)
+          </a>
         </div>
 
         <div className="rounded-sm border border-line bg-paper-raised p-6">
@@ -62,7 +67,7 @@ export default function TransparencePage() {
             Bilan financier annuel
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-            Conformément à l&apos;article 17 de notre règlement intérieur, le
+            Conformément à l&apos;article 19 de notre règlement intérieur, le
             rapport financier annuel est publié ici dès son approbation par
             l&apos;Assemblée générale. La section venant d&apos;être créée,
             aucun exercice n&apos;a encore été clos — le premier bilan
@@ -104,10 +109,16 @@ export default function TransparencePage() {
               organisations syndicales — ils peuvent porter sur des
               discussions internes qu&apos;il n&apos;est pas dans
               l&apos;intérêt des agents de rendre publiques.{" "}
+              Ils sont communiqués sur demande aux adhérent.e.s, auprès de
+              l&apos;Équipe syndicale (voir la page{" "}
+              <Link href="/contact" className="font-medium text-slate underline">
+                Contact
+              </Link>
+              ).{" "}
               <Link href="/adhesion" className="font-medium text-slate underline">
                 Adhérer
               </Link>{" "}
-              donne accès à ces documents.
+              permet d&apos;y accéder.
             </p>
           </div>
         </div>
