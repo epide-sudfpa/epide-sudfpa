@@ -26,7 +26,7 @@ export default function MentionsLegalesPage() {
             Directeur de publication
           </h2>
           <p className="mt-2">
-            {siteConfig.mentionsLegales.directeurPublication || "À compléter"}
+            {siteConfig.mentionsLegales.directeurPublication || "L. LESVIGNES"}
           </p>
         </section>
 
