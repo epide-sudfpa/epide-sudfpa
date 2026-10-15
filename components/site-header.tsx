@@ -19,9 +19,9 @@ export function SiteHeader() {
             <Image
               src="/logo/sud-fpa-epide.png"
               alt="SUD FPA EPIDE — Solidaires"
-              width={80}
+              width={64}
               height={64}
-              className="h-16 w-auto"
+              className="h-16 w-16"
               priority
             />
           </Link>

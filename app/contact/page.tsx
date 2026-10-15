@@ -37,7 +37,7 @@ export default function ContactPage() {
         <div className="rounded-sm border border-line bg-paper-raised p-6">
           <MapPin size={20} className="text-copper" strokeWidth={1.75} />
           <h2 className="mt-3 font-display text-lg font-semibold text-ink">
-            En centre
+            En centre / au siège
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-ink-soft">
             Sélectionnez votre centre pour voir vos contacts locaux, au fur

@@ -42,9 +42,9 @@ export default function Home() {
             <Image
               src="/logo/sud-fpa-epide.png"
               alt="SUD FPA EPIDE — Solidaires"
-              width={140}
+              width={112}
               height={112}
-              className="block h-28 w-auto"
+              className="block h-28 w-28"
               priority
             />
             <span className="mt-6 inline-flex items-center rounded-full bg-urgence/10 px-3 py-1 font-mono-num text-xs font-semibold uppercase tracking-widest text-urgence">

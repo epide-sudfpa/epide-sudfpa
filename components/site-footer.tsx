@@ -18,9 +18,9 @@ export function SiteFooter() {
             <Image
               src="/logo/sud-fpa-epide.png"
               alt="SUD FPA EPIDE — Solidaires"
-              width={160}
+              width={128}
               height={128}
-              className="mt-4 h-32 w-auto"
+              className="mt-4 h-32 w-32"
             />
             {siteConfig.federation.afficherEnAvant && siteConfig.federation.url && (
               <p className="mt-4 text-sm text-paper/70">

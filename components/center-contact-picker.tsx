@@ -19,7 +19,7 @@ export function CenterContactPicker() {
   return (
     <div>
       <label htmlFor="centre" className="text-sm font-medium text-ink">
-        Votre centre
+        Votre entité de rattachement
       </label>
       <select
         id="centre"
