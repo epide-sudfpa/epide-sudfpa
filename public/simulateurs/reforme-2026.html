@@ -301,7 +301,7 @@ window.addEventListener("error", function (e) {
 <script>
 /* Réglages de la section : à adapter avant mise en ligne */
 /* Reprend siteConfig (lib/config.ts) : aucun nom de syndicat en dur ailleurs */
-window.SIMU_CONFIG = { nomCourt: "SUD FPA EPIDE", version: "1.8.0", date: "13/10/2026", email: "epide.sudfpa" + "\u0040" + "epide.fr", adhesion: "/adhesion" };
+window.SIMU_CONFIG = { nomCourt: "SUD FPA EPIDE", version: "1.8.2", date: "23/10/2026", email: "epide-sudfpa" + "\u0040" + "epide.fr", adhesion: "/adhesion" };
 </script>
 <script>/* Moteur de calcul — réforme de la rémunération EPIDE 2026 — SUD FPA EPIDE
    Traduction fidèle de moteur.py (mêmes règles, mêmes hypothèses H1 à H5).
@@ -316,7 +316,7 @@ var M = (function () {
     N3:        { label: "Niveau 3 — Adjoint administratif / Adjoint technique / Moniteur", pas: 15, g: [327,342,357,372,387,402,417,432,447,462,477] },
     SECADM:    { label: "Niveau 2 — Secrétaire administratif / Technicien", pas: 20, g: [362,382,402,422,442,462,482,502,522,542,562] },
     CONSEILLER:{ label: "Niveau 2 — Conseiller", pas: 20, g: [382,402,422,442,462,482,502,522,542,562,582] },
-    CHARGE:    { label: "Niveau 2 — Chargé de…", pas: 20, g: [432,452,472,492,512,532,552,572,595,612,632] },
+    CHARGE:    { label: "Niveau 2 — Chargé de…", pas: 20, g: [432,452,472,492,512,532,552,572,592,612,632] },
     FORMATEUR: { label: "Niveau 1 — Formateur / Responsable", pas: 25, g: [481,506,531,556,581,606,631,656,681,706,731] },
     COORDO:    { label: "Niveau 1 — Coordonnateur", pas: 25, g: [551,576,601,626,651,676,701,726,751,776,801] },
     CHEF:      { label: "Niveau 1 — Attaché / Chef de service / Chef de projet", pas: 25, g: [571,596,621,646,671,696,721,746,771,796,821] },
@@ -376,7 +376,10 @@ var M = (function () {
       out.push(cur); rest--;
       if (rest === 0) {
         var i = g.indexOf(cur);
-        if (i >= 0) cur = g[Math.min(i + 1, g.length - 1)]; else cur = Math.min(cur + G.pas, Math.max(top, cur));
+        var j = bonus ? g.indexOf(cur - bonus) : -1;                    // « marche + 5 » : marche suivante + 5 (grille irrégulière de l'infirmier : 574 → 604)
+        if (i >= 0) cur = g[Math.min(i + 1, g.length - 1)];
+        else if (j >= 0) cur = g[Math.min(j + 1, g.length - 1)] + bonus;
+        else cur = Math.min(cur + G.pas, Math.max(top, cur));
         rest = 36;
       }
     }
